@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Posts</h1>
-
+<h1>Welcome to My Blog<h1>
 <table>
   <thead>
     <tr>
@@ -18,6 +18,7 @@
         <td><%= post.author %></td>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
+        <td><%= time_ago_in_words post.created_at%>ago</td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,6 +27,12 @@
   </tbody>
 </table>
 
+  
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+<br>
+
+ 
+ 
+

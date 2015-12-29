@@ -4,7 +4,6 @@
   <strong>Author:</strong>
   <%= @post.author %>
 </p>
-
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
@@ -14,6 +13,21 @@
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
+<p><strong>comment</strong>
+	<%@post.comments.each do |comment|%>
+	<%=comment.text	%>
+<% end %>
+
+<p>
+	<%= form_for [@post, @post.comments.build] do |f|%>
+	<%=f.text_area :text%>
+	<%= f.submit "post comment"%>
+</p>
+<% end %> 
+
+
+
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
